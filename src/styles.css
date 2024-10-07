@@ -39,9 +39,7 @@ header {
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
   padding: 30px;
 }
-main {
-  padding: 30px 0;
-}
+
 .weather-app-city {
   font-size: 38px;
   line-height: 48px;
