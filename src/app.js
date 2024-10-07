@@ -13,10 +13,12 @@ function refreshWeather(response) {
 
   cityElement.innerHTML = response.data.city;
   timeElement.innerHTML = formatDate(date);
-  descriptionElement.innerHTML = response.data.condition.description;
+  descriptionElement.innerHTML = `${formatDate(date)}, ${
+    response.data.condition.description
+  }`;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windSpeedElement.innerHTML = `${response.data.wind.speed} km/h`;
-  temperatureElement.innerHTML = `${Math.round(temperature)}°C`;
+  temperatureElement.innerHTML = Math.round(temperature);
 }
 
 function formatDate(date) {
@@ -47,7 +49,11 @@ function searchCity(city) {
 function handleSearchSubmit(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-form-input");
-  searchCity(searchInput.value);
+  if (searchInput && searchInput.value) {
+    searchCity(searchInput.value);
+  } else {
+    console.error("Search input not found or empty");
+  }
 }
 
 let searchFormElement = document.querySelector("#search-form");
