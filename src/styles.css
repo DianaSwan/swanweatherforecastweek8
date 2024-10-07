@@ -57,15 +57,16 @@ header {
 
 .weather-app-data {
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   margin: 10px;
 }
 
 .weather-app-container {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  margin-left: auto;
 }
 
 .weather-app-icon {
