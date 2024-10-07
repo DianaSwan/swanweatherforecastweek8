@@ -60,6 +60,20 @@ main {
   display: flex;
   justify-content: space-between;
 }
+
+.weather-app-container {
+  display: flex;
+  align-items: center;
+}
+
+.weather-app-icon {
+  font-size: 2rem;
+  margin-right: 10px;
+}
+
+.weather-app-temperature {
+  font-size: 2rem;
+}
 footer {
   border-top: 1px solid #c3bef0;
   padding: 30px 0 0 0;
