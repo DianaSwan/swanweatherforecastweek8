@@ -43,7 +43,12 @@ function formatDate(date) {
 function searchCity(city) {
   let apiKey = "24a843192c3oc0c5tab227801f7a3edf";
   let apiURL = `https://api.shecodes.io/weather/v1/current?query={query}&key={key}`;
-  axios.get(apiURL).then(refreshWeather);
+  axios
+    .get(apiURL)
+    .then(refreshWeather)
+    .catch(function (error) {
+      console.error("Error fetching weather data", error);
+    });
 }
 
 function handleSearchSubmit(event) {
