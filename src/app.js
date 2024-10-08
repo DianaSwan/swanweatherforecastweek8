@@ -16,8 +16,7 @@ searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 function searchCity(city) {
   let apiKey = "24a843192c3oc0c5tab227801f7a3edf";
-  let apiURL = `https://api.shecodes.io/weather/v1/current?query={query}&key={key}`;
-
+  let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
   axios
     .get(apiURL)
     .then(refreshWeather)
@@ -27,7 +26,7 @@ function searchCity(city) {
 }
 
 function refreshWeather(response) {
-  let temperatureElement = document.querySelector("#temperature");
+  let temperatureElement = document.querySelector("#temperature-number");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
