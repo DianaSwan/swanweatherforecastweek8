@@ -111,7 +111,7 @@ main {
 .weather-forecast-temperatures {
   text-align: center;
   font: 16px;
-  color: grey;
+  color: #c54c82;
   display: flex;
   margin-top: 10px;
   justify-content: center;
