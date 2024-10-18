@@ -35,11 +35,14 @@ function refreshWeather(response) {
 
   let date = new Date(response.data.time * 1000);
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
+
   cityElement.innerHTML = response.data.city;
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity + "%";
   windSpeedElement.innerHTML = response.data.wind.speed + " km/h";
   timeElement.innerHTML = formatDate(date);
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -94,4 +97,3 @@ function displayForecast(response) {
 }
 
 searchCity("Nairobi");
-getForecast("Nairobi");
