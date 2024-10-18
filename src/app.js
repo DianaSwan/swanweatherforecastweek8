@@ -60,8 +60,10 @@ function formatDate(date) {
 
 function getForecast(city) {
   let apiKey = "24a843192c3oc0c5tab227801f7a3edf";
+
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+  console.log(apiURL);
 }
-let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
 
 function displayForecast() {
   let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
@@ -87,4 +89,7 @@ function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;
 }
+
+searchCity("Nairobi");
+getForecast("Nairobi");
 displayForecast();
