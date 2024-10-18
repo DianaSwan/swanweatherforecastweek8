@@ -63,9 +63,12 @@ function getForecast(city) {
 
   let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
   console.log(apiURL);
+  axios(apiURL).then(displayForecast);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
+
   let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
   let forecastHtml = "";
 
@@ -92,4 +95,3 @@ function displayForecast() {
 
 searchCity("Nairobi");
 getForecast("Nairobi");
-displayForecast();
